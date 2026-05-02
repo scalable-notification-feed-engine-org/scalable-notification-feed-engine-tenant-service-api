@@ -47,7 +47,7 @@ public class TenantServiceImpl implements TenantService {
                     savedTenant.getId(),
                     savedTenant.getSlug(),
                     savedTenant.getName(),
-                    UUID.fromString(savedTenant.getOwnerId())
+                    request.ownerId()
             );
 
                 tenantEventProducer.sendTenantCreatEvent(event);
