@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "tenant", indexes = {
+@Table(name = "tenants", indexes = {
         @Index(name = "idx_tenant_slug", columnList = "slug")
 })
 @Getter
@@ -27,7 +27,7 @@ public class Tenant extends BaseEntity {
     @Column(nullable = false)
     private TenantStatus status;
     @Column(nullable = false)
-    private String ownerId;
+    private UUID ownerId;
     @Column(nullable = false)
     private boolean isPublic;
     private String description;
